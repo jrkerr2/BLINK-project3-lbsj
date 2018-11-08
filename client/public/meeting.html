@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+        <title>Lucky Fang</title>
+    </head>
+
+    <style>
+        #logo{
+            font-size: 50px;
+            color:rgb(80, 80, 80);
+            font-weight: bold;
+        }
+        #meetingButtons{
+            margin:5px;
+        }
+        .mtb{
+            color:white;
+            padding: 16px 18px;
+            width:200px;
+            margin-right:23px;
+        }
+        #meetingButtons{
+            padding-left:22px;
+        }
+        label{
+            width:90%;
+        }
+        .align-items-end{
+            padding:16px 18px;
+        }
+        .meetingSub{
+            border-width: 2px !important;
+            border-radius: 15px;
+            border:rgb(48, 48, 48);
+            border:solid;
+        }
+        .msub{
+            margin: 15px 0;
+        }
+       
+    </style>
+
+    <body>
+        <div class="container">
+            <div class="row top align-items-center">
+                <div class="col-auto">
+                    <h1 id="logo">BLINK</h1>
+                </div>
+                
+                <div class="col-atuo justify-content-midlle text-center float-right" id="meetingButtons">
+                    
+                    <button class="btn mtb" style="background-color: rgb(255,144,82)" id="offTrack">Meeting Off Track</button>
+                    <button class="btn mtb" style="background-color: rgb(0,166,255)" id="greatPoint">Great Point</button>
+                    <button class="btn mtb" style="background-color: rgb(184,151,126)" id="raiseHand">Raise your Hand</button>
+                    <button class="btn mtb" style="background-color: rgb(119,211,83)" id="startMeeting">Start Meeting</button>
+                </div>
+
+            </div>
+            <div>
+                <form  class="offset-lg-2">
+                    <div class="form-row">
+                        <div class="from-group col-md-3 d-flex align-items-end">
+                            <input type="text" class="form-control" id="setTime" placeholder="Meeting Length">
+                        </div>
+
+                        <div class="from-group col-md-3 d-flex align-items-end">
+                            <input type="text" class="form-control" id="setCost" placeholder="Meeting Cost">
+                        </div>
+                        <div class="from-group col-md-4 mtb text-center">
+                            <button class="btn mtb" id="createMeeting" style="background-color:rgb(90,105,120)">Create Meeting</button>
+                        </div>
+                    </div>
+                </form>
+                <form>
+                    <div class="form-group">
+                        <div class="row msub">
+                            <div class="col-md-3 text-center">
+                                <label for="meetingAgenda" class="meetingSub">Meeting Agenda</label>
+                            </div>
+                            <div class="col-md-9">
+                                <textarea class="form-control mmt" id="meetingAgenda" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="row msub">
+                            <div class="col-md-3 text-center">
+                                <label for="AC" class="meetingSub">Acceptance Criteria</label>
+                            </div>
+                            <div class="col-md-9">
+                                <textarea class="form-control mmt" id="AC" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="row msub">
+                            <div class="col-md-3 text-center">
+                                <label for="plan" class="meetingSub">Plan</label>
+                            </div>
+                            <div class="col-md-9">
+                                <textarea class="form-control mmt" id="plan" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+
+            </div>
+
+        </div>
+
+
+        
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
