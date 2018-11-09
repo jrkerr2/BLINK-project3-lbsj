@@ -1,5 +1,5 @@
 {
-  "name": "project3",
+  "name": "blink-project3-lbsj",
   "version": "1.0.0",
   "description": "bob shauna lucky john",
   "engines": {
@@ -11,16 +11,19 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
     "install": "cd client && yarn install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "",
+  "author": "lbsj",
   "license": "ISC",
   "dependencies": {
     "yarn":"^1.10.1",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "axios": "^0.16.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.17",
     "if-env": "^1.0.4"
   }
 }
