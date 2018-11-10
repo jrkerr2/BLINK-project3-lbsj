@@ -4,7 +4,7 @@
   "description": "bob shauna lucky john",
   "engines": {
     "node": "8.11.3"
-    },
+  },
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -19,7 +19,7 @@
   "author": "lbsj",
   "license": "ISC",
   "dependencies": {
-    "yarn":"^1.10.1",
+    "yarn": "^1.10.1",
     "body-parser": "^1.18.3",
     "axios": "^0.16.2",
     "express": "^4.16.3",
