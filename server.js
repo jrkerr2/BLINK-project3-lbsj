@@ -23,7 +23,7 @@ mongoose.connect(dbCon, { useNewUrlParser: true }, function(error) {
   if (error) {
     console.log("Database _BLINK_ Error:", error);
   }
-  console.log("Connected to the Blink Meetings database @: " + dbCon)
+  console.log("Connected to the Blink Meetings database @ " + dbCon)
 });
 
 // Start the API server
