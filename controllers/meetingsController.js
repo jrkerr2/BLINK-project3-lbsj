@@ -21,6 +21,8 @@ module.exports = {
   },
 
   create: function(req, res) {
+    console.log(" **=> you made it to CREATE <=** ");
+    console.log(req.body);
     db.Meeting
       .create(req.body)
       .then(dbModel => res.json(dbModel))

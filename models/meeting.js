@@ -9,6 +9,9 @@ const meetingSchema = new Schema({
 //   synopsis: String,
 //   date: { type: Date, default: Date.now }
 
+    nana: { type: String, required: true },
+    john: { type: String, required: true },
+
 });
 
 const Meeting = mongoose.model("Meeting", meetingSchema);
