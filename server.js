@@ -28,5 +28,5 @@ mongoose.connect(dbCon, { useNewUrlParser: true }, function(error) {
 
 // Start the API server
 app.listen(PORT, function() {
-  console.log(` ==> lbsj API server now listening on PORT ${PORT} <==`);
+  console.log(` ==> *lbsj* BLINK Meetings API server now listening on PORT ${PORT} <==`);
 });
