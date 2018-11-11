@@ -5,6 +5,7 @@ const db = require("../models");
 module.exports = {
     
   findAll: function(req, res) {
+    console.log("You've reached findAll");
     db.Meeting
       .find(req.query)
       .sort({ date: -1 })
