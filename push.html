@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <title>Pusher Test</title>
+  <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('c785fb8623f55789d46b', {
+      cluster: 'us2',
+      forceTLS: true
+    });
+
+    var channel = pusher.subscribe('jk-channel');
+    channel.bind('jk-event', function(data) {
+      alert(JSON.stringify(data));
+    });
+  </script>
+</head>
+<body>
+  <h1>Pusher Test</h1>
+  <form action="http://localhost:3001/api/meetings" method="post">
+    <input type="submit" name="upvote" value=1 />
+</form>
+  <p>
+    Try publishing an event to channel <code>my-channel</code>
+    with event name <code>my-event</code>.
+  </p>
+</body>

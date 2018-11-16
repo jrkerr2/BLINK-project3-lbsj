@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const Pusher = require("pusher");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -11,7 +12,24 @@ app.use(express.json());
 // Static assets for Heroku
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-}
+};
+
+// Pusher connect
+var pusher = new Pusher({
+  appId: '648683',
+  key: 'c785fb8623f55789d46b',
+  secret: 'a21fe0f432e225905f86',
+  cluster: 'us2',
+  encrypted: true
+});
+
+pusher.trigger('jk-channel', 'jk-event', {
+  "message": "hello, Nana!",
+  "name": "stuff",
+  "channel": "ON home demo"
+
+});
+
 // Add routes, both API and view
 app.use(routes);
 
