@@ -10,9 +10,11 @@ const meetingSchema = new Schema({
 //   date: { type: Date, default: Date.now }
 
 // John's TEST SCHEMA
-    nana: { type: String, required: false },
-    john: { type: String, required: false },
-    upvote: { type: Boolean, required: false }
+    meeting_id: { type: String, required: false },
+    meeting_name: { type: String, required: false },
+    upvote: { type: Boolean, required: false },
+    off: { type: Boolean, required: false },
+    hand: { type: Boolean, required: false }
 
 // Shauna's initial SCHEMA
     // meeting_id: { type: String, unique: true },
