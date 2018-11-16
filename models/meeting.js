@@ -10,11 +10,18 @@ const meetingSchema = new Schema({
 //   date: { type: Date, default: Date.now }
 
 // John's TEST SCHEMA
-    meeting_id: { type: String, required: false },
+    meeting_id: { type: String, required: false, unique: true },
     meeting_name: { type: String, required: false },
+    objective: { type: String, required: false },
+    agenda: [{ type: String, required: false }],
     upvote: { type: Boolean, required: false },
     off: { type: Boolean, required: false },
-    hand: { type: Boolean, required: false }
+    hand: { type: Boolean, required: false },
+    users: [{ type: String, required: false }],
+    attendees: [{ type: String, required: false }],
+    notes: [{ type: String, required: false }],
+    cost: { type: Number, required: false },
+    duration: { type: Number, required: false }
 
 // Shauna's initial SCHEMA
     // meeting_id: { type: String, unique: true },
