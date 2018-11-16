@@ -23,12 +23,13 @@ var pusher = new Pusher({
   encrypted: true
 });
 
-pusher.trigger('jk-channel', 'jk-event', {
-  "message": "hello, Nana!",
-  "name": "stuff",
-  "channel": "ON home demo"
+// *** IGNORE -- PUSHER PoC
+// pusher.trigger('jk-channel', 'jk-event', {
+//   "message": "hello, Nana!",
+//   "name": "stuff",
+//   "channel": "ON home demo"
 
-});
+// });
 
 // Add routes, both API and view
 app.use(routes);
