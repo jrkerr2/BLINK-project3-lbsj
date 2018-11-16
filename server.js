@@ -17,19 +17,18 @@ app.use(routes);
 
 // Mac use 
 // Connect to the Blink database on Mongo
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/blink");
+var dbCon = process.env.MONGODB_URI || "mongodb://root:root@192.168.99.100/blink?authSource=admin"
 
 // Windows use
 // var dbCon = "mongodb://root:root@192.168.99.100/blink?authSource=admin";
-
-// mongoose.connect(dbCon, { useNewUrlParser: true }, function(error) {
-//   if (error) {
-//     console.log("Database _BLINK_ Error:", error);
-//   }
-//   console.log("Connected to: " + dbCon)
-// });
+mongoose.connect(dbCon, { useNewUrlParser: true }, function(error) {
+  if (error) {
+    console.log("Database _BLINK_ Error:", error);
+  }
+  console.log("Connected to the Blink Meetings database @ " + dbCon)
+});
 
 // Start the API server
 app.listen(PORT, function() {
-  console.log(` ==> lbsj API server now listening on PORT ${PORT} <==`);
+  console.log(` ==> *lbsj* BLINK Meetings API server now listening on PORT ${PORT} <==`);
 });

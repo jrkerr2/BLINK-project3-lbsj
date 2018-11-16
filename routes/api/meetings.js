@@ -3,6 +3,7 @@ const meetingsController = require("../../controllers/meetingsController");
 
 // Equivalent to "/api/meetings"
 router.route("/")
+  // .get(console.log("You made it to /api/meetings"))
   .get(meetingsController.findAll)
   .post(meetingsController.create);
 

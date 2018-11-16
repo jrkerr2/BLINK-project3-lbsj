@@ -5,6 +5,7 @@ const db = require("../models");
 module.exports = {
     
   findAll: function(req, res) {
+    console.log("You've reached findAll");
     db.Meeting
       .find(req.query)
       .sort({ date: -1 })
@@ -20,6 +21,8 @@ module.exports = {
   },
 
   create: function(req, res) {
+    console.log(" **=> you made it to CREATE <=** ");
+    console.log(req.body);
     db.Meeting
       .create(req.body)
       .then(dbModel => res.json(dbModel))
