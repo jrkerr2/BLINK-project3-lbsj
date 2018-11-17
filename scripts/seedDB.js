@@ -3,6 +3,7 @@ const db = require("../models");
 
 // This file empties the Blink collection and inserts the meetings below
 
+// please check your locally-necessary connection string
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://root:roots@localhost:27017/blink?options."
