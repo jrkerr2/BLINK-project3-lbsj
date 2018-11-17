@@ -16,12 +16,12 @@ const meetingSchema = new Schema({
     agenda: [{ type: String, required: false }],
     upvote: { type: Boolean, required: false },
     off: { type: Boolean, required: false },
-    hand: { type: Boolean, required: false },
-    users: [{ type: String, required: false }],
+    hand: { type: Boolean, required: false },    
     attendees: [{ type: String, required: false }],
     notes: [{ type: String, required: false }],
     cost: { type: Number, required: false },
-    duration: { type: Number, required: false }
+    duration: { type: Number, required: false },
+    rating: [{ type: Number }]
 
 // Shauna's initial SCHEMA
     // meeting_id: { type: String, unique: true },
