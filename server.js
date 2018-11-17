@@ -35,9 +35,11 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
+// Mac use 
 // Connect to the Blink database on Mongo
 var dbCon = process.env.MONGODB_URI || "mongodb://root:root@192.168.99.100/blink?authSource=admin"
 
+// Windows use
 // var dbCon = "mongodb://root:root@192.168.99.100/blink?authSource=admin";
 mongoose.connect(dbCon, { useNewUrlParser: true }, function(error) {
   if (error) {
