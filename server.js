@@ -26,8 +26,6 @@ app.use(routes);
 // Connect to the Blink database on Mongo
 var dbCon = process.env.MONGODB_URI || "mongodb://root:root@192.168.99.100/blink?authSource=admin"
 
-// Windows use
-// var dbCon = "mongodb://root:root@192.168.99.100/blink?authSource=admin";
 mongoose.connect(dbCon, { useNewUrlParser: true }, function(error) {
   if (error) {
     console.log("Database _BLINK_ Error:", error);
