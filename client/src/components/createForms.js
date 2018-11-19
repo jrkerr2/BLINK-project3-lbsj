@@ -17,7 +17,23 @@ const Basic = () => (
       }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
+          // e.preventDefault();
+          // var values = this;
+          alert(values.agenda);
+          console.log(values);
+          fetch('http://localhost:3001/api/meetings', { 
+            method: 'POST',
+            mode: "cors",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(values)
+
+          })
+          .then(function(response) {
+            console.log(response);
+            return response.json()
+          }).then(function(body) {
+            console.log(body);
+          });
           setSubmitting(false);
         }, 400);
       }}

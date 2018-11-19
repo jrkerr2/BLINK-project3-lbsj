@@ -9,19 +9,25 @@ const meetingSchema = new Schema({
 //   synopsis: String,
 //   date: { type: Date, default: Date.now }
 
+// Lucky Test Schema
+    agenda: { type: String, required: false },
+    criteria: { type: String, required: false }
+    
+
 // John's TEST SCHEMA
-    meeting_id: { type: String, required: false, unique: true },
-    meeting_name: { type: String, required: false },
-    objective: { type: String, required: false },
-    agenda: [{ type: String, required: false }],
-    upvote: { type: Boolean, required: false },
-    off: { type: Boolean, required: false },
-    hand: { type: Boolean, required: false },    
-    attendees: [{ type: String, required: false }],
-    notes: [{ type: String, required: false }],
-    cost: { type: Number, required: false },
-    duration: { type: Number, required: false },
-    rating: [{ type: Number }]
+    // meeting_id: { type: String, required: false, unique: true },
+    // meeting_name: { type: String, required: false },
+    // criteria: { type: String, required: false },
+    // objective: { type: String, required: false },
+    // agenda: { type: String, required: false },
+    // upvote: { type: Boolean, required: false },
+    // off: { type: Boolean, required: false },
+    // hand: { type: Boolean, required: false },    
+    // attendees: [{ type: String, required: false }],
+    // notes: [{ type: String, required: false }],
+    // cost: { type: Number, required: false },
+    // duration: { type: Number, required: false },
+    // rating: [{ type: Number }]
 
 // Shauna's initial SCHEMA
     // meeting_id: { type: String, unique: true },
