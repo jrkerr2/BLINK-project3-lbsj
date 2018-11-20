@@ -21,7 +21,7 @@ const Basic = () => (
           // var values = this;
           alert(values.agenda);
           console.log(values);
-          fetch('http://localhost:3001/api/meetings', { 
+          fetch('/api/meetings', { 
             method: 'POST',
             mode: "cors",
             headers: {'Content-Type': 'application/json'},
