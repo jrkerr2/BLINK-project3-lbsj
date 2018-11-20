@@ -12,7 +12,8 @@ const meetingSchema = new Schema({
 // Lucky Test Schema
     agenda: { type: String, required: false },
     criteria: { type: String, required: false },
-    meeting_id: { type: String, required: false, unique: true }
+    meeting_id: { type: String, required: false, unique: true },
+    attendees: [{ type: String }]
     
 
 // John's TEST SCHEMA
