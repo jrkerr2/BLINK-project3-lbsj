@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import {Grid, } from 'react-bootstrap';
-import FormExample from './form'
-
-
+import {Grid, FormControl, FormGroup, HelpBlock, Button, ControlLabel } from 'react-bootstrap';
 
 export default class JoinM extends Component {
     render() {
         return(
             <Grid>
               <h1>Join a Meeting</h1>
-                <FormExample />
                 <JoinMeetingForm />
             </Grid>
         )
@@ -18,7 +14,6 @@ export default class JoinM extends Component {
 
 class JoinMeetingForm extends React.Component {
    
-  
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -27,33 +22,46 @@ class JoinMeetingForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
-  
-
   handleChange(event) {
     this.setState({value: event.target.value});
   }
 
   handleSubmit(event) {
     alert('Your are joining meeting id: ' + this.state.value);
-    event.preventDefault();
-   
-    
+    event.preventDefault(); 
   }
-  
-  
+
+  getValidationState() {
+    const length = this.state.value.length;
+    if (length > 10) return 'success';
+    else if (length > 5) return 'warning';
+    else if (length > 0) return 'error';
+    return null;
+  }
        
   render() {
     return (
+      <div>
       
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Meeting ID: 
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-          
-        </label>
-        <input type="submit" value="Submit" />
+        <FormGroup
+          controlId="meeingID"
+          validationState={this.getValidationState()}
+        >
+          <ControlLabel>Please Enter Your Meeting ID</ControlLabel>
+          <FormControl
+            type="text"
+            value={this.state.value}
+            placeholder="Enter Meeting ID Here"
+            onChange={this.handleChange}
+          />
+          <FormControl.Feedback />
+          <HelpBlock>Meeting ID has a minimium of 10 characters.</HelpBlock>
+        </FormGroup>
+        <Button type="submit" value="Submit">Submit</Button>
       </form>
-      
-    );
+      </div>
+    );            
   }
 }
+
