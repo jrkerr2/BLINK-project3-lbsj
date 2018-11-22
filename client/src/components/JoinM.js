@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Grid, FormControl, FormGroup, HelpBlock, Button, ControlLabel } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 export default class JoinM extends Component {
     render() {
@@ -58,7 +59,7 @@ class JoinMeetingForm extends React.Component {
           <FormControl.Feedback />
           <HelpBlock>Meeting ID has a minimium of 10 characters.</HelpBlock>
         </FormGroup>
-        <Button type="submit" value="Submit">Submit</Button>
+        <Button type="submit" value="Submit" to="/Meeting"><Link to="/Meeting">Submit</Link></Button>
       </form>
       </div>
     );            
