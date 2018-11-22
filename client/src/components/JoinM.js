@@ -29,8 +29,14 @@ class JoinMeetingForm extends React.Component {
 
   handleSubmit(event) {
     alert('Your are joining meeting id: ' + this.state.value);
-    event.preventDefault(); 
+    console.log("you are going to meeting:" +this.state.value)
+    event.preventDefault();    
+    this.onSubmitSuccess();
   }
+  
+//   onSubmitSuccess (result, dispatch, props) {
+//     return props.dispatch(routerActions.push(uri));
+//  }
 
   getValidationState() {
     const length = this.state.value.length;
@@ -59,7 +65,7 @@ class JoinMeetingForm extends React.Component {
           <FormControl.Feedback />
           <HelpBlock>Meeting ID has a minimium of 10 characters.</HelpBlock>
         </FormGroup>
-        <Button type="submit" value="Submit" to="/Meeting"><Link to="/Meeting">Submit</Link></Button>
+         <Button type="submit" value="Submit" ><Link to="/Meeting">Submit</Link></Button> 
       </form>
       </div>
     );            
