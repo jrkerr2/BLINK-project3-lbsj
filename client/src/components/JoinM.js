@@ -28,8 +28,8 @@ class JoinMeetingForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Your are joining meeting id: ' + this.state.value);
-    console.log("you are going to meeting:" +this.state.value)
+    alert("You are joining a meeting with ID: " + this.state.value);
+    console.log("You are going to meeting: " + this.state.value);
     event.preventDefault();    
     this.onSubmitSuccess();
   }
