@@ -17,6 +17,23 @@ class MessageForm extends Component {
     this.input.value = ""
   }
 
+  offtrack= (event)=> {
+    event.preventDefault()
+    this.props.onMessageSend("Meeting is Off Track!")
+    this.input.value=""
+  }
+
+  greatPoint= (event)=> {
+    event.preventDefault()
+    this.props.onMessageSend("Great Point!")
+    this.input.value=""
+  }
+
+  raiseHand =(event) =>{
+    event.preventDefault()
+    this.props.onMessageSend("I have something to say")
+  }
+
   render() {
     return (
       <form className="MessageForm" onSubmit={this.handleFormSubmit}>
@@ -32,9 +49,16 @@ class MessageForm extends Component {
             Send
           </button>
         </div>
+        <div>
+          <button className="btn " onClick={this.offtrack} >Meeting Off Track</button>
+          <button className="btn" onClick={this.greatPoint} >Great Point</button>
+          <button className="btn" onClick={this.raiseHand} >Raise your Hand</button>  
+        </div>
       </form>
+      
     )
   }
 }
 
 export default MessageForm
+
