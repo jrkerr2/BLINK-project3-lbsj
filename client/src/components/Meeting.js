@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Grid, Col, Row } from 'react-bootstrap';
 import Chat from './chat/Chat';
 import axios from 'axios';
+import './Meeting.css'
 
 
 
@@ -17,11 +18,18 @@ export default class Meeting extends Component {
         .then(res=>{
             console.log(res)
             this.setState({ meetings: res.data });
+            
         })
     }
     
 
     render() {
+
+        const attendeeList = this.state.meetings.attendees;
+        console.log(attendeeList)
+
+
+
         return(
             <Grid>
 
@@ -29,29 +37,39 @@ export default class Meeting extends Component {
               <h2>{this.props.match.params.meetingId}</h2>
               
               <Row>
-                  <Col size="md-3">
-                    <div>Meeting Agenda:  </div>
+                  <Col md={3}>
+                    <div className="agenda">Meeting Agenda:  </div>
                     </Col>
 
-                    <Col size="md-9">
-                        <p>{this.state.meetings.agenda}
+                    <Col md={9}>
+                        <div>{this.state.meetings.agenda}
                  
                
-                        </p>
+                        </div>
                     </Col>
               </Row>
               <Row>
-                  <Col size="md-3">
-                    <div>Criteria:  </div>
+                  <Col md={3}>
+                    <div className="criteria">Criteria:  </div>
                    </Col>
-                   <Col size="md-9">
+                   <Col md={9}>
                    <div>{this.state.meetings.criteria}
              
                    </div>
                    </Col>
               </Row>
-
-              <Chat />
+                <Row >
+                <Col md={2}>
+                    <div className="attendees">{this.state.meetings.attendees}
+                     </div>
+       
+   
+                    </Col>
+                    <Col md={10}>
+                        <Chat />
+                    </Col>
+                </Row>
+              
 
               
                 
@@ -60,3 +78,4 @@ export default class Meeting extends Component {
         )
     }
 }
+
