@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Grid, FormControl, FormGroup, HelpBlock, Button, ControlLabel } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import {BrowserRouter, Route, Link } from 'react-router-dom'
+import Meeting from './Meeting';
 
 export default class JoinM extends Component {
     render() {
@@ -40,22 +41,25 @@ class JoinMeetingForm extends React.Component {
 
   getValidationState() {
     const length = this.state.value.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
-    return null;
+    if (length === 24) {
+      return 'success';
+    }
+    else { 
+      return 'error';
+    }  
   }
        
   render() {
     return (
+      <BrowserRouter>
       <div>
       
       <form onSubmit={this.handleSubmit}>
         <FormGroup
-          controlId="meeingID"
+          controlId="meetingID"
           validationState={this.getValidationState()}
         >
-          <ControlLabel>Please Enter Your Meeting ID</ControlLabel>
+          <ControlLabel>Please enter your meeting ID</ControlLabel>
           <FormControl
             type="text"
             value={this.state.value}
@@ -63,11 +67,13 @@ class JoinMeetingForm extends React.Component {
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
-          <HelpBlock>Meeting ID has a minimium of 10 characters.</HelpBlock>
+          <HelpBlock>A Blink meeting ID is 24 characters (example: "5bf44a736b802d4dec36884d").</HelpBlock>
         </FormGroup>
-         <Button type="submit" value="Submit" ><Link to="/Meeting">Submit</Link></Button> 
+         <Button type="submit" disabled={this.getValidationState()!=="success"} value="Submit" ><Link to={`/Meeting/${this.state.value}`}>Submit</Link></Button> 
       </form>
+      <Route path="/Meeting/:meetingId" component={Meeting} />
       </div>
+      </BrowserRouter>
     );            
   }
 }

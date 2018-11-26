@@ -14,6 +14,7 @@ module.exports = {
   },
 
   findById: function(req, res) {
+    console.log("You've reached findById");
     db.Meeting
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))

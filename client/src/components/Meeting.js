@@ -7,13 +7,13 @@ import axios from 'axios';
 
 export default class Meeting extends Component {
     state ={
-        meetings:[]
+        meeting:""
     }
 
     // get meeting method// 
     componentDidMount() {
-        axios.get( "/api/meetings")
-        
+        axios.get( `/api/meetings/${this.props.match.params.meetingId}`)
+        //axios.get("/api/meetings/{}")
         .then(res=>{
             console.log(res)
             this.setState({ meetings: res.data });
@@ -26,6 +26,7 @@ export default class Meeting extends Component {
             <Grid>
 
               <h1>Welcome! you are in a Meeting</h1>
+              <h2>{this.props.match.params.meetingId}</h2>
               
               <Row>
                   <Col size="md-3">
@@ -33,7 +34,7 @@ export default class Meeting extends Component {
                     </Col>
 
                     <Col size="md-9">
-                        <p>{this.state.meetings.map(meetings=> <li>{meetings.agenda}</li>)}
+                        <p>{this.state.meeting.map(meeting=> <li>{meeting.agenda}</li>)}
                  
                
                         </p>
