@@ -24,15 +24,17 @@ class JoinMeetingForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
+ 
+
   handleChange(event) {
     this.setState({value: event.target.value});
   }
 
   handleSubmit(event) {
-    alert("You are joining a meeting with ID: " + this.state.value);
+    // alert("You are joining a meeting with ID: " + this.state.value);
     console.log("You are going to meeting: " + this.state.value);
     event.preventDefault();    
-    this.onSubmitSuccess();
+    // this.onSubmitSuccess();
   }
   
 //   onSubmitSuccess (result, dispatch, props) {

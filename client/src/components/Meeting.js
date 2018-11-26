@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export default class Meeting extends Component {
     state ={
-        meeting:""
+        meetings:""
     }
 
     // get meeting method// 
@@ -34,7 +34,7 @@ export default class Meeting extends Component {
                     </Col>
 
                     <Col size="md-9">
-                        <p>{this.state.meeting.map(meeting=> <li>{meeting.agenda}</li>)}
+                        <p>{this.state.meetings.agenda}
                  
                
                         </p>
@@ -45,7 +45,7 @@ export default class Meeting extends Component {
                     <div>Criteria:  </div>
                    </Col>
                    <Col size="md-9">
-                   <div>{this.state.meetings.map(meetings=> <li>{meetings.criteria}</li>)}
+                   <div>{this.state.meetings.criteria}
              
                    </div>
                    </Col>
