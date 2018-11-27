@@ -32,7 +32,7 @@ class JoinMeetingForm extends React.Component {
     alert("You are joining a meeting with ID: " + this.state.value);
     console.log("You are going to meeting: " + this.state.value);
     event.preventDefault();    
-    this.onSubmitSuccess();
+    // this.onSubmitSuccess();
   }
   
 //   onSubmitSuccess (result, dispatch, props) {
@@ -53,6 +53,10 @@ class JoinMeetingForm extends React.Component {
     return (
       <BrowserRouter>
       <div>
+
+      
+        
+        
       
       <form onSubmit={this.handleSubmit}>
         <FormGroup
@@ -69,9 +73,12 @@ class JoinMeetingForm extends React.Component {
           <FormControl.Feedback />
           <HelpBlock>A Blink meeting ID is 24 characters (example: "5bf44a736b802d4dec36884d").</HelpBlock>
         </FormGroup>
-         <Button type="submit" disabled={this.getValidationState()!=="success"} value="Submit" ><Link to={`/Meeting/${this.state.value}`}>Submit</Link></Button> 
-      </form>
-      <Route path="/Meeting/:meetingId" component={Meeting} />
+        <Link to={`/Meeting/${this.state.value}`}><Button type="submit" disabled={this.getValidationState()!=="success"} value="Submit" >Submit</Button> </Link>
+      </form> 
+
+
+
+      <Route path="/Meeting/:meetingId" component={ Meeting } />
       </div>
       </BrowserRouter>
     );            
