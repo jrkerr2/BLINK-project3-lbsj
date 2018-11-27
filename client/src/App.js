@@ -13,9 +13,8 @@ class App extends Component {
         <div>
           <CustomNavbar />
           <Route exact path="/" component={CreateM} />
-          <Route exact path="/Join" component={JoinM} />
-          
-          <Route path="/Meeting/:meetingId" component={ Meeting } />
+          <Route exact path="/Join" component={JoinM} />          
+          <Route exact path="/Meeting/:meetingId" component={ Meeting } />
 
         </div>
       </Router>
