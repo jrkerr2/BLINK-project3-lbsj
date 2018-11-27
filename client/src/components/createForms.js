@@ -30,9 +30,12 @@ const Basic = () => (
           })
           .then(function(response) {
             console.log(response);
+            console.log(response._id);
             return response.json()
           }).then(function(body) {
             console.log(body);
+            console.log(body._id);
+            alert("Use this ID to send to your invitees: " + body._id);
           });
           setSubmitting(false);
         }, 400);

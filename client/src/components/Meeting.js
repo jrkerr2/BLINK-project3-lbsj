@@ -1,17 +1,59 @@
 import React, { Component } from 'react';
-import {Grid} from 'react-bootstrap';
-import Chat from './chat/Chat'
+import {Grid, Col, Row } from 'react-bootstrap';
+import Chat from './chat/Chat';
+import axios from 'axios';
+
 
 
 export default class Meeting extends Component {
+    state ={
+        meeting:''
+    }
+
+    // get meeting method// 
+    componentDidMount() {
+        axios.get( `/api/meetings/${this.props.match.params.meetingId}`)
+        //axios.get("/api/meetings/{}")
+        .then(res=>{
+            this.setState({ meeting: res.data });
+            console.log(res.data)
+        })
+        console.log(this.state.meeting)
+    }
+    
+
     render() {
         return(
             <Grid>
-              <h1>Welcome! you are in a Meeting</h1>
-              <div>Meeting Agenda: </div>
-              <div>Criteria: </div>
+
+              <h1>Welcome! You are in Meeting:</h1>
+              <h2>{this.props.match.params.meetingId}</h2>
+              
+              <Row>
+                  <Col size="md-3">
+                    <div>Meeting Agenda:  </div>
+                    </Col>
+
+                    <Col size="md-9">
+                    
+                        { this.state.meeting.agenda }
+                        
+                    </Col>
+              </Row>
+              <Row>
+                  <Col size="md-3">
+                    <div>Criteria:  </div>
+                   </Col>
+                   <Col size="md-9">
+                   
+                        { this.state.meeting.criteria }             
+                   
+                   </Col>
+              </Row>
 
               <Chat />
+
+              
                 
         
             </Grid>
