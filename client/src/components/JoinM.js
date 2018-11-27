@@ -68,7 +68,7 @@ class JoinMeetingForm extends React.Component {
             <FormControl.Feedback />
             <HelpBlock>A Blink meeting ID is 24 characters (example: "5bf44a736b802d4dec36884d").</HelpBlock>
           </FormGroup>
-         <Button type="submit" disabled={this.getValidationState()!=="success"} value="Submit" > <Link to={`/Meeting/${this.state.value}`}>Submit</Link></Button> 
+          <Link to={`/Meeting/${this.state.value}`}><Button type="submit" disabled={this.getValidationState()!=="success"} value="Submit">Submit</Button> </Link>
         </form> 
      
       </div>
