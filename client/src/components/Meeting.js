@@ -26,7 +26,7 @@ export default class Meeting extends Component {
 
     askName() {
         
-        var person = prompt("Please enter your name:", "User 1");
+        var person = prompt("Please enter your name:", "");
         if (person !== null && person !== "") {
             localStorage.setItem('user', person);
             this.setState({ user: person });
