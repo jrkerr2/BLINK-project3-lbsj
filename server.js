@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-// Connect to the Blink database on Mongo
+// Connect to the Blink database on Mongo -- check local connection string
 var dbCon = process.env.MONGODB_URI || "mongodb://root:root@192.168.99.100/blink?authSource=admin"
 
 mongoose.connect(dbCon, { useNewUrlParser: true }, function(error) {
