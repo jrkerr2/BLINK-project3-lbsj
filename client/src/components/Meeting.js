@@ -14,7 +14,7 @@ export default class Meeting extends Component {
     // get meeting method// 
     componentDidMount() {
         this.askName();
-        axios.get( `/api/meetings/${ this.props.match.params.meetingId }`)
+        axios.get(`/api/meetings/${ this.props.match.params.meetingId }`)
         //axios.get("/api/meetings/{}")
         .then(res=>{
             this.setState({ meeting: res.data });
@@ -24,12 +24,20 @@ export default class Meeting extends Component {
         console.log(this.state.meeting)
     }
 
-    askName() {
-        
+    askName() {        
         var person = prompt("Please enter your name:", "");
         if (person !== null && person !== "") {
             localStorage.setItem('user', person);
             this.setState({ user: person });
+            console.log("almost to put")
+            axios.put(`/api/meetings/${ this.props.match.params.meetingId }`, {
+
+                attendees: person
+                }
+            )
+            .then(response => {
+                console.log(response)
+            })
 
         } else {
             this.askName()

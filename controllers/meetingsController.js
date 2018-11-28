@@ -31,6 +31,8 @@ module.exports = {
   },
 
   update: function(req, res) {
+    console.log(" **=> you made it to UPDATE <=** ");
+    console.log(req.body);
     db.Meeting
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
@@ -38,6 +40,8 @@ module.exports = {
   },
 
   remove: function(req, res) {
+    console.log(" **=> you made it to DELETE <=** ");
+    console.log(req.body);
     db.Meeting
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
