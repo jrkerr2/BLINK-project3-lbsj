@@ -32,9 +32,9 @@ module.exports = {
 
   update: function(req, res) {
     console.log(" **=> you made it to UPDATE <=** ");
-    console.log(req.body);
+    console.log("REQ.BODY.ATTENDEES: " + req.body.attendees);
     db.Meeting
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ _id: req.params.id }, {$push: {attendees: req.body.attendees}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
