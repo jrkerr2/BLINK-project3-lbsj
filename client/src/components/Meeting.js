@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Grid, Col, Row } from 'react-bootstrap';
 import Chat from './chat/Chat';
 import axios from 'axios';
+import './Meeting.css'
 
 
 
@@ -54,7 +55,7 @@ export default class Meeting extends Component {
               
               <Row>
                   <Col size="md-3">
-                    <div>Meeting Agenda:  </div>
+                    <div><h1>Meeting Agenda: </h1> </div>
                     </Col>
 
                     <Col size="md-9">
@@ -65,7 +66,7 @@ export default class Meeting extends Component {
               </Row>
               <Row>
                   <Col size="md-3">
-                    <div>Criteria:  </div>
+                    <h1><div>Criteria:  </div></h1>
                    </Col>
                    <Col size="md-9">
                    
@@ -75,6 +76,8 @@ export default class Meeting extends Component {
               </Row>
 
               <Chat />
+
+              <div className="attendees">{this.state.meeting.attendees}</div>
 
               
                 
