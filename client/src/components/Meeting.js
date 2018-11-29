@@ -15,14 +15,20 @@ export default class Meeting extends Component {
     // get meeting method// 
     componentDidMount() {
         this.askName();
-        axios.get(`/api/meetings/${ this.props.match.params.meetingId }`)
+        setInterval(() => {
+            //console.log('Alligator!!!!');
+            axios.get(`/api/meetings/${ this.props.match.params.meetingId }`)
         //axios.get("/api/meetings/{}")
         .then(res=>{
             this.setState({ meeting: res.data });
             console.log(res.data)
         })
+          }, 1000);
+        
+        
         
         console.log(this.state.meeting)
+        
     }
 
     askName() {        
