@@ -16,7 +16,7 @@ class Chat extends Component {
 
   handleNewMessage = (text) => {
     this.setState({
-      messages: [...this.state.messages, { me: true, author: "Me", body: text }],
+      messages: [...this.state.messages, { me: true, author: localStorage.getItem('user'), body: text }],
     })
   }
 
