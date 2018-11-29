@@ -13,7 +13,7 @@ const meetingSchema = new Schema({
     agenda: { type: String, required: false },
     criteria: { type: String, required: false },
     meeting_id: { type: String, required: false, unique: true },
-    attendees: [{ type: String }]
+    attendees: [{ type: String }] // sub document
     
 
 // John's TEST SCHEMA
