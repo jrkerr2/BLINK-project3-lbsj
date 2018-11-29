@@ -54,30 +54,37 @@ export default class Meeting extends Component {
               <h2>{ this.props.match.params.meetingId }</h2>
               
               <Row>
-                  <Col size="md-3">
+                  <Col md={3}>
                     <div><h1>Meeting Agenda: </h1> </div>
                     </Col>
 
-                    <Col size="md-9">
+                    <Col md={9}>
                     
                         { this.state.meeting.agenda }
                         
                     </Col>
               </Row>
               <Row>
-                  <Col size="md-3">
+                  <Col md={3}>
                     <h1><div>Criteria:  </div></h1>
                    </Col>
-                   <Col size="md-9">
+                   <Col md={9}>
                    
                         { this.state.meeting.criteria }             
                    
                    </Col>
               </Row>
-
-              <Chat />
-
-              <div className="attendees">{this.state.meeting.attendees}</div>
+                <Row>
+                    <Col md={2}>
+                    <h5>Attedndees</h5>
+                        <div className="attendees">{this.state.meeting.attendees}</div>
+                    </Col>
+                    <Col md={10}>
+                        <Chat />
+                    </Col>
+              </Row>
+                <div>{localStorage.getItem('user')}</div>
+              
 
               
                 
