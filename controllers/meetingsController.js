@@ -30,11 +30,27 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
-  update: function(req, res) {
-    console.log(" **=> you made it to UPDATE <=** ");
+  updateAttendees: function(req, res) {
+    console.log(" **=> you made it to UPDATE ATTENDEES <=** ");
     console.log("REQ.BODY.ATTENDEES: " + req.body.attendees);
     db.Meeting
       .findOneAndUpdate({ _id: req.params.id }, {$push: {attendees: req.body.attendees}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
+  updateFeed: function(req, res) {
+    console.log(" **=> you made it to UPDATE FEED <=** ");
+    console.log("REQ.BODY.FEED: " + req.body.feed);
+    db.Meeting
+      .findOneAndUpdate({ _id: req.params.id }, {$push: {feed: req.body.feed}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
+  update: function(req, res) {
+    db.Meeting
+      .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

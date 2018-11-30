@@ -18,7 +18,7 @@ class Chat extends Component {
     this.setState({
       messages: [...this.state.messages, { me: true, author: localStorage.getItem('user'), body: text }],
     })
-    axios.put(`/api/meetings/${ this.props.meetingID }`, {
+    axios.put(`/api/meetings/feed/${ this.props.meetingID }`, {
       feed:this.state.messages
     }
       )
@@ -32,8 +32,8 @@ class Chat extends Component {
     return (
       <div className="Chat">
         <Buttons />
-        <MessageList messages={this.state.messages} />
-        <MessageForm onMessageSend={this.handleNewMessage} />
+        <MessageList messages={ this.state.messages } />
+        <MessageForm onMessageSend={ this.handleNewMessage } />
       </div>
     );
   }
