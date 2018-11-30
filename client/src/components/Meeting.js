@@ -27,6 +27,16 @@ export default class Meeting extends Component {
         console.log(this.state.meeting)        
     }
 
+    // pollDb() {
+    //     this.askNamme();
+    //     axios.get(`/api/meetings/${ this.props.match.params.meetingId }`)
+    //     .then(res => {
+    //             this.setState({ meeting: res.data });
+    //             console.log(res.data)
+    //     })
+    //     setTimeout(pollDb, 1000);
+    // };
+
     askName() {        
         var person = prompt("Please enter your name:", "");
         if (person !== null && person !== "") {
