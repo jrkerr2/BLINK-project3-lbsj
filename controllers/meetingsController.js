@@ -40,10 +40,10 @@ module.exports = {
   },
 
   updateFeed: function(req, res) {
-    console.log(" **=> you made it to UPDATE FEED <=** ");
+    console.log(" **=> you made it to the UPDATE for FEED <=** ");
     console.log("REQ.BODY.FEED: " + req.body.feed);
     db.Meeting
-      .findOneAndUpdate({ _id: req.params.id }, {$push: {feed: req.body.feed}})
+      .findOneAndUpdate({ _id: req.params.id }, {feed: "made it here"}) // {$push: {feed: req.body.feed}}
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

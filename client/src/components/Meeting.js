@@ -85,6 +85,7 @@ export default class Meeting extends Component {
                         <Chat meetingID={this.props.match.params.meetingId}/>
                     </Col>
               </Row>
+                <p>You are logged in as user:</p>
                 <div>{ localStorage.getItem('user') }</div>            
 
                         
