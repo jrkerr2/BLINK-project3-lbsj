@@ -20,7 +20,7 @@ export default class Meeting extends Component {
             axios.get(`/api/meetings/${ this.props.match.params.meetingId }`)
             .then(res => {
                 this.setState({ meeting: res.data });
-                console.log(res.data)
+                //console.log(res.data)
             })
           }, 1000);      
         
@@ -82,7 +82,7 @@ export default class Meeting extends Component {
                         <div className="attendees">{ this.state.meeting.attendees }</div>
                     </Col>
                     <Col md={10}>
-                        <Chat />
+                        <Chat meetingID={this.props.match.params.meetingId}/>
                     </Col>
               </Row>
                 <div>{ localStorage.getItem('user') }</div>            
