@@ -33,7 +33,7 @@ export default class Meeting extends Component {
             localStorage.setItem('user', person);
             this.setState({ user: person });
             // console.log("almost to put")
-            axios.put(`/api/meetings/${ this.props.match.params.meetingId }`, {
+            axios.put(`/api/meetings/attendees/${ this.props.match.params.meetingId }`, {
                 attendees: person
 
              })

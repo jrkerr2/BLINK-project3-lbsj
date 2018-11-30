@@ -18,6 +18,7 @@ class Chat extends Component {
     this.setState({
       messages: [...this.state.messages, { me: true, author: localStorage.getItem('user'), body: text }],
     })
+    console.log(this.state.messages);
     axios.put(`/api/meetings/feed/${ this.props.meetingID }`, {
       feed:this.state.messages
     }
