@@ -77,13 +77,15 @@ export default class Meeting extends Component {
                    </Col>
               </Row>
                 <Row>
-                    <Col md={2}>
+                <Col md={2}>
                     <h5>Attendees</h5>
-                        <div className="attendees">{ this.state.meeting.attendees }</div>
+                        <div className="attendees">
+                            {/* {this.state.meeting.attendees.map((attendee)=>{
+                                return(<p>{attendee}</p>)
+                            })} */}
+                        </div>
                     </Col>
-                    <Col md={10}>
-                        <Chat />
-                    </Col>
+
               </Row>
                 <div>{ localStorage.getItem('user') }</div>            
 
