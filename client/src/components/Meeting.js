@@ -20,12 +20,22 @@ export default class Meeting extends Component {
             axios.get(`/api/meetings/${ this.props.match.params.meetingId }`)
             .then(res => {
                 this.setState({ meeting: res.data });
-                console.log(res.data)
+                //console.log(res.data)
             })
-          }, 1000);      
+          }, 100000);      
         
         console.log(this.state.meeting)        
     }
+
+    // pollDb() {
+    //     this.askNamme();
+    //     axios.get(`/api/meetings/${ this.props.match.params.meetingId }`)
+    //     .then(res => {
+    //             this.setState({ meeting: res.data });
+    //             console.log(res.data)
+    //     })
+    //     setTimeout(pollDb, 1000);
+    // };
 
     askName() {        
         var person = prompt("Please enter your name:", "");
@@ -33,7 +43,7 @@ export default class Meeting extends Component {
             localStorage.setItem('user', person);
             this.setState({ user: person });
             // console.log("almost to put")
-            axios.put(`/api/meetings/${ this.props.match.params.meetingId }`, {
+            axios.put(`/api/meetings/attendees/${ this.props.match.params.meetingId }`, {
                 attendees: person
 
              })
@@ -87,6 +97,7 @@ export default class Meeting extends Component {
                     </Col>
 
               </Row>
+                <p>You are logged in as user:</p>
                 <div>{ localStorage.getItem('user') }</div>            
 
                         
