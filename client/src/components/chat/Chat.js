@@ -27,7 +27,7 @@ class Chat extends Component {
         console.log(response.data.feed)
     })
     console.log("This is your MESSAGE meeting ID: " + this.props.meetingID);
-    console.log("Messages: " + this.messages);
+    console.log("*messages* from Chat.js: " + this.state.messages);
   }
   
   render() {
