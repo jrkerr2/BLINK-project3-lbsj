@@ -20,9 +20,9 @@ export default class Meeting extends Component {
             axios.get(`/api/meetings/${ this.props.match.params.meetingId }`)
             .then(res => {
                 this.setState({ meeting: res.data });
-                console.log(res.data)
+                //console.log(res.data)
             })
-          }, 1000);      
+          }, 100000);      
         
         console.log(this.state.meeting)        
     }
@@ -43,7 +43,7 @@ export default class Meeting extends Component {
             localStorage.setItem('user', person);
             this.setState({ user: person });
             // console.log("almost to put")
-            axios.put(`/api/meetings/${ this.props.match.params.meetingId }`, {
+            axios.put(`/api/meetings/attendees/${ this.props.match.params.meetingId }`, {
                 attendees: person
 
              })
@@ -92,9 +92,10 @@ export default class Meeting extends Component {
                         <div className="attendees">{ this.state.meeting.attendees }</div>
                     </Col>
                     <Col md={10}>
-                        <Chat />
+                        <Chat meetingID={this.props.match.params.meetingId}/>
                     </Col>
               </Row>
+                <p>You are logged in as user:</p>
                 <div>{ localStorage.getItem('user') }</div>            
 
                         

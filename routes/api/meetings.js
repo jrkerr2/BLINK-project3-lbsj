@@ -13,4 +13,16 @@ router.route("/:id")
   .put(meetingsController.update)
   .delete(meetingsController.remove);
 
+// Equivalent to "/api/meetings/feed/:id"
+router.route("/feed/:id")
+  .get(meetingsController.findById)
+  .put(meetingsController.updateFeed)
+  .delete(meetingsController.remove);
+
+// Equivalent to "/api/meetings/attendees/:id"
+router.route("/attendees/:id")
+.get(meetingsController.findById)
+.put(meetingsController.updateAttendees)
+.delete(meetingsController.remove);
+
 module.exports = router;
