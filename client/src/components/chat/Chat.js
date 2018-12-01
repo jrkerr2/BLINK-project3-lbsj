@@ -10,7 +10,7 @@ class Chat extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      messages: [],
+      messages: [{}],
     }
   } 
 
@@ -18,9 +18,9 @@ class Chat extends Component {
     this.setState({
       messages: [...this.state.messages, { me: true, author: localStorage.getItem('user'), body: text }],
     })
-    console.log(this.state.messages);
+    console.log("John says this: " + this.state.messages[0].body);
     axios.put(`/api/meetings/feed/${ this.props.meetingID }`, {
-      feed:this.state.messages
+      feed: this.state.messages
     }
       )
     .then(response => {
