@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Grid, Col, Row } from 'react-bootstrap';
+import { Grid, Col, Row } from 'react-bootstrap';
 import Chat from './chat/Chat';
 import axios from 'axios';
 import './Meeting.css'
@@ -16,32 +16,37 @@ export default class Meeting extends Component {
     componentDidMount() {
         this.askName();
         setInterval(() => {
-            //console.log('Alligator!!!!');
+            // console.log('Alligator!!!!');
             axios.get(`/api/meetings/${ this.props.match.params.meetingId }`)
-        //axios.get("/api/meetings/{}")
-        .then(res=>{
-            this.setState({ meeting: res.data });
-            console.log(res.data)
-        })
-          }, 1000);
+            .then(res => {
+                this.setState({ meeting: res.data });
+                //console.log(res.data)
+            })
+          }, 100000);      
         
-        
-        
-        console.log(this.state.meeting)
-        
+        console.log(this.state.meeting)        
     }
+
+    // pollDb() {
+    //     this.askNamme();
+    //     axios.get(`/api/meetings/${ this.props.match.params.meetingId }`)
+    //     .then(res => {
+    //             this.setState({ meeting: res.data });
+    //             console.log(res.data)
+    //     })
+    //     setTimeout(pollDb, 1000);
+    // };
 
     askName() {        
         var person = prompt("Please enter your name:", "");
         if (person !== null && person !== "") {
             localStorage.setItem('user', person);
             this.setState({ user: person });
-            console.log("almost to put")
-            axios.put(`/api/meetings/${ this.props.match.params.meetingId }`, {
-
+            // console.log("almost to put")
+            axios.put(`/api/meetings/attendees/${ this.props.match.params.meetingId }`, {
                 attendees: person
-                }
-            )
+
+             })
             .then(response => {
                 console.log(response)
             })
@@ -56,8 +61,9 @@ export default class Meeting extends Component {
         return(
             <Grid>
 
-              <h1>Welcome! You are in Meeting:</h1>
-              <h2>{ this.props.match.params.meetingId }</h2>
+              <h1>Welcome!</h1>
+              <h2>You are in meeting:</h2>
+              <h3>{ this.props.match.params.meetingId }</h3>
               
               <Row>
                   <Col md={3}>
@@ -82,18 +88,17 @@ export default class Meeting extends Component {
               </Row>
                 <Row>
                     <Col md={2}>
-                    <h5>Attedndees</h5>
-                        <div className="attendees">{this.state.meeting.attendees}</div>
+                    <h5>Attendees</h5>
+                        <div className="attendees">{ this.state.meeting.attendees }</div>
                     </Col>
                     <Col md={10}>
-                        <Chat />
+                        <Chat meetingID={this.props.match.params.meetingId}/>
                     </Col>
               </Row>
-                <div>{localStorage.getItem('user')}</div>
-              
+                <p>You are logged in as user:</p>
+                <div>{ localStorage.getItem('user') }</div>            
 
-              
-                
+                        
         
             </Grid>
         )
