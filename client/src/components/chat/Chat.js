@@ -13,6 +13,20 @@ class Chat extends Component {
       messages: [{me: true, author: "Facilitator", body: "Welcome to the meeting!"}]
     }
   } 
+
+  componentDidMount() {
+    setInterval(() => {
+        axios.get(`/api/meetings/feed/${ this.props.meetingID }`)
+        .then(res => {
+            this.setState({messages: JSON.parse("[" + res.data.feed + "]")});
+            //console.log("Type of feed is: ", typeof(res.data.feed));
+            //console.log("Trying json parse: ", JSON.parse("[" + res.data.feed + "]"));
+        })
+        // console.log(this.state.messages);      
+    }, 10000);      
+    
+      
+}
   
   handleNewMessage = (text) => {
     let newMessage = { me: true, author: localStorage.getItem('user'), body: text }
@@ -26,15 +40,17 @@ class Chat extends Component {
     this.setState((prevState) => ({
       messages: [...prevState.messages, { me: true, author: localStorage.getItem('user'), body: text }],
     }))
+    //console.log("Type of messages from setState: ", typeof(this.state.messages))
+    console.log("Messages from setState: ", this.state.messages)
 
   }
 
   returnFeed = () => {
-    axios.get("/api/meetings/feed/")
+    axios.put(`/api/meetings/feed/${ this.props.meetingID }`)
     .then(res => {
         console.log("Roxy says: " + res.data);
-          // this.setState({ messages: res.data.feed });
-          //console.log(res.data)
+          this.setState({ messages: res.data.feed });
+          console.log(res.data)
       })
 
   }    
@@ -68,5 +84,4 @@ export default Chat;
 // })
 // console.log("This is your MESSAGE meeting ID: " + this.props.meetingID);
 // console.log("*messages* from Chat.js: " + this.state.messages);
-// another commentt
 
