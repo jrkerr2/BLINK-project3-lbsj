@@ -23,7 +23,7 @@ class Chat extends Component {
             //console.log("Trying json parse: ", JSON.parse("[" + res.data.feed + "]"));
         })
         // console.log(this.state.messages);      
-    }, 10000);      
+    }, 1000);      
     
       
 }
