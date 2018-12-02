@@ -11,6 +11,7 @@ module.exports = {
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+      
   },
 
   findById: function(req, res) {
@@ -43,7 +44,7 @@ module.exports = {
     console.log(" **=> you made it to the UPDATE for FEED <=** ");
     console.log("REQ.BODY.FEED: " + req.body.feed);
     db.Meeting
-      .findOneAndUpdate({ _id: req.params.id }, {$push: {feed: req.body.feed}})
+      .findOneAndUpdate({ _id: req.params.id }, {$push: {feed: req.body.feed}}, {new: true})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
