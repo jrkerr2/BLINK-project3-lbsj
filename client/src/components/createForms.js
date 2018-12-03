@@ -65,7 +65,7 @@ const Basic = () => (
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.agenda}
-                  placeholder="what's your meeting agenda"
+                  placeholder="What topics will you cover in this session?"
                 />
                 {errors.agenda && touched.agenda && errors.agenda}
                 </Col>
@@ -74,7 +74,7 @@ const Basic = () => (
             <FormGroup>
               <Row>
                 <Col md={4}>
-                  <ControlLabel>OutCome</ControlLabel>
+                  <ControlLabel>Outcomes</ControlLabel>
                 </Col>
                 <Col md={8}>
                   <FormControl componentClass="textarea"
@@ -83,7 +83,7 @@ const Basic = () => (
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.criteria}
-                    placeholder="put meeting outcomes here"
+                    placeholder="What do you hope to accomplish in this session?"
                   />
                   {errors.criteria && touched.criteria && errors.criteria}
                 </Col>
