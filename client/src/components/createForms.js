@@ -55,17 +55,17 @@ const Basic = () => (
           <form onSubmit={handleSubmit}>
             <FormGroup>
               <Row>
-              <Col md={4}>
+              <Col md={1}>
                   <ControlLabel>Agenda</ControlLabel>
               </Col>
-              <Col md={8}>
+              <Col md={6}>
                 <FormControl componentClass="textarea"
                   type="agenda"
                   name="agenda"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.agenda}
-                  placeholder="What topics will you cover in this session?"
+                  placeholder="What topics will you cover in this meeting?"
                 />
                 {errors.agenda && touched.agenda && errors.agenda}
                 </Col>
@@ -73,17 +73,17 @@ const Basic = () => (
             </FormGroup>
             <FormGroup>
               <Row>
-                <Col md={4}>
+                <Col md={1} >
                   <ControlLabel>Outcomes</ControlLabel>
                 </Col>
-                <Col md={8}>
+                <Col md={6}>
                   <FormControl componentClass="textarea"
                     type="criteria"
                     name="criteria"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.criteria}
-                    placeholder="What do you hope to accomplish in this session?"
+                    placeholder="What do you hope to accomplish in this meeting?"
                   />
                   {errors.criteria && touched.criteria && errors.criteria}
                 </Col>

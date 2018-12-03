@@ -61,11 +61,10 @@ class Chat extends Component {
         
         <div className="bordered"  >Activity Feed</div>
         
-        <div className="bordered2">Coding BootCamp Group-3<div style={{float:'right'}}><img src={'https://us.123rf.com/450wm/alexwhite/alexwhite1603/alexwhite160302764/53462445-earth-black-and-red-glossy-internet-icon-on-black-background.jpg?ver=6'}></img><img src={'https://thumbs.dreamstime.com/z/retro-wifi-icon-black-background-light-bulb-59256303.jpg'}></img><img src={'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX2572420.jpg'}></img></div></div>
+        <div className="bordered2">Tell us what you are thinking...<div style={{float:'right'}}><img src={'https://us.123rf.com/450wm/alexwhite/alexwhite1603/alexwhite160302764/53462445-earth-black-and-red-glossy-internet-icon-on-black-background.jpg?ver=6'}></img><img src={'https://thumbs.dreamstime.com/z/retro-wifi-icon-black-background-light-bulb-59256303.jpg'}></img><img src={'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX2572420.jpg'}></img></div></div>
 
-        
-        
-       
+        {/* <div className="bordered"  >Today</div> */}
+      
         <MessageList messages={ this.state.messages } />
         <MessageForm onMessageSend={ this.handleNewMessage } />
       </div>
