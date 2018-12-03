@@ -74,7 +74,9 @@ export default class Meeting extends Component {
               </Row>
               <Row>
                   <Col md={3} className="agenda">
+
                    <div><h3>Outcome Expected:  </h3></div>
+
                    </Col>
                    <Col md={11} >
                    
@@ -93,14 +95,14 @@ export default class Meeting extends Component {
                             
                             
                             <thead className="tableheader">
-                                <tr><th className="header2" colSpan={5}>Reported to Meeting : Present Attenddees</th></tr>
+                                <tr><th className="header2" colSpan={5}>Attendees</th></tr>
                                 <tr>
-                                <th>P</th>
+                                <th>B</th>
                                 
                                 <th>Occupation</th>
                                 <th>Name</th>
-                                <th>T</th>
-                                <th>Assginee</th>
+                                <th>Joined</th>
+                                <th>Role</th>
                                
                                 </tr>
                             </thead>
@@ -142,7 +144,7 @@ export default class Meeting extends Component {
                                 <td><img src={'https://us.123rf.com/450wm/alexwhite/alexwhite1603/alexwhite160302787/53462430-up-arrow-black-and-red-glossy-internet-icon-on-black-background.jpg?ver=6'} /></td>
 
                                 <td>DEV-3</td>
-                                <td>Jonh</td>
+                                <td>John</td>
                                 <td><img src={'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX14381468.jpg'} /></td>
                                 <td>Admin</td>
                                 </tr>
