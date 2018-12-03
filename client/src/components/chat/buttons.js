@@ -19,6 +19,7 @@ class Buttons extends Component {
     render() {
         return (
             <div>
+                <Btn />
                 <button className="btn mtb" onClick={this.offTrack} id="offTrack">Meeting Off Track</button>
                 <button className="btn mtb" onClick={this.greatPoint} id="greatPoint">Great Point</button>
                 <button className="btn mtb" onClick={this.raiseHand} id="raiseHand">Raise your Hand</button>              
@@ -29,3 +30,40 @@ class Buttons extends Component {
 }
 
 export default Buttons 
+
+class Btn extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        succeed: false
+      };
+    }
+  
+    handleClick() {
+      this.setState(previousState => {
+        return {
+          succeed: !previousState.succeed
+        };
+      })
+    }
+  
+    render() {
+      const succeed = (
+        <div>
+            <button className="btn mtb" >Meeting Off Track</button>
+        </div>
+      )
+  
+      const notsucceed = (
+        <div>
+          <button className="btn act">Meeting Off Track</button>
+        </div>
+      )
+  
+      return (
+        <div onClick={this.handleClick.bind(this)}>
+          {this.state.succeed ? succeed : notsucceed}
+        </div>
+      )
+    }
+  };
