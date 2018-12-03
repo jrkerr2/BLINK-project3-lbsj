@@ -17,14 +17,6 @@
   flex-direction: column;
 }
 
-.MessageForm {
-  
-  border-top: 1px solid #ccc;
-  border-radius: 0 0 3px 3px;
-  box-sizing: border-box;
-  flex: 0 0 30px;
-}
-
 
 .bordered{
   padding:5px;
