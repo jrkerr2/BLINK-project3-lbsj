@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import MessageForm from './MessageForm';
 import MessageList from "./MessageList";
-import Buttons from './buttons';
-import axios from 'axios';
+import Buttons from './buttons'
+import axios from 'axios'
 import './Chat.css';
-import {Table} from 'react-bootstrap';
 
 
 class Chat extends Component {
@@ -59,14 +58,6 @@ class Chat extends Component {
   render() {
     return (
       <div className="Chat">
-        
-        <div className="bordered"  >Activity Feed</div>
-        
-        <div className="bordered2">Coding BootCamp Group-3<div style={{float:'right'}}><img src={'https://us.123rf.com/450wm/alexwhite/alexwhite1603/alexwhite160302764/53462445-earth-black-and-red-glossy-internet-icon-on-black-background.jpg?ver=6'}></img><img src={'https://thumbs.dreamstime.com/z/retro-wifi-icon-black-background-light-bulb-59256303.jpg'}></img><img src={'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX2572420.jpg'}></img></div></div>
-
-        
-        
-       
         <Buttons />
         <MessageList messages={ this.state.messages } />
         <MessageForm onMessageSend={ this.handleNewMessage } />
