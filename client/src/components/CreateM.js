@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Grid,  } from 'react-bootstrap';
 import Basic from './createForms';
-import './createM.css'
 
 export default class CreateM extends Component {
   
