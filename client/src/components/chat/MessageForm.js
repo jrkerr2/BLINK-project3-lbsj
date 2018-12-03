@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './MessageForm.css'
+// import { } from 'react-bootstrap'
 
 class MessageForm extends Component {
   static propTypes = {
@@ -20,8 +21,7 @@ class MessageForm extends Component {
 
   offtrack= (event)=> {
     event.preventDefault()
-    this.props.onMessageSend("Meeting is Off Track! Meeting is Off Track! Meeting is Off Track! Meeting is Off Track! Meeting is Off Track! Meeting is Off Track! Meeting is Off Track! Meeting is Off Track! Meeting is Off Track!Meeting is Off Track! Meeting is Off Track!  Meeting is Off Track! Meeting is Off Track! Meeting is Off Track! Meeting is Off Track!")
-    this.input.value=""
+    this.props.onMessageSend("Meeting is Off Track!")
   }
 
   greatPoint= (event)=> {
@@ -38,6 +38,7 @@ class MessageForm extends Component {
   render() {
     return (
       <form className="MessageForm" onSubmit={this.handleFormSubmit}>
+        
         <div className="input-container">
           <input
             type="text"
@@ -50,11 +51,12 @@ class MessageForm extends Component {
             Send
           </button>
         </div>
-        <div>
+       
+          
           <button className="btn " onClick={this.offtrack} >Meeting Off Track</button>
           <button className="btn" onClick={this.greatPoint} >Great Point</button>
           <button className="btn" onClick={this.raiseHand} >Raise your Hand</button>  
-        </div>
+   
       </form>
       
     )

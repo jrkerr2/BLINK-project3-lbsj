@@ -19,7 +19,7 @@ const Basic = () => (
         setTimeout(() => {
           // e.preventDefault();
           // var values = this;
-          alert(values.agenda);
+          // alert(values.agenda);
           console.log(values);
           fetch('/api/meetings', { 
             method: 'POST',
