@@ -13,7 +13,7 @@
   }
   
   .Message.me .author {
-    color: black;
+    color: rgb(165, 245, 61);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold
   }

@@ -9,7 +9,7 @@ export default class CustomNavbar extends Component {
         <Navbar default collapseOnSelect className="navv">
           <Navbar.Header>
             <Navbar.Brand>
-              <Link to="/" className="logo">Blink</Link>
+              <Link to="/" className="logo">BLINK</Link>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>

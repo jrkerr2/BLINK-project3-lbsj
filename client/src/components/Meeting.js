@@ -66,7 +66,7 @@ export default class Meeting extends Component {
                     <div><h3>Meeting Agenda: </h3> </div>
                     </Col>
 
-                    <Col md={11} mdOffset={1}>
+                    <Col md={11} >
                     
                         <div ><p>{ this.state.meeting.agenda }</p></div>
                         
@@ -74,9 +74,11 @@ export default class Meeting extends Component {
               </Row>
               <Row>
                   <Col md={3} className="agenda">
-                   <div><h3>Outcomes expected:  </h3></div>
+
+                   <div><h3>Outcome Expected:  </h3></div>
+
                    </Col>
-                   <Col md={11} mdOffset={1}>
+                   <Col md={11} >
                    
                         <p>{ this.state.meeting.criteria } </p>            
                    

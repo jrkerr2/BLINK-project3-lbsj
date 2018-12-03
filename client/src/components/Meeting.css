@@ -34,6 +34,7 @@
 img {
   height:13px;
   width: 13px;
+  margin-right:3px;
 }
 td, thead, th{
   border:   rgb(133, 133, 133)
