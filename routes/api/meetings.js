@@ -15,7 +15,7 @@ router.route("/:id")
 
 // Equivalent to "/api/meetings/feed/:id"
 router.route("/feed/:id")
-  .get(meetingsController.findById)
+  .get(meetingsController.findFeedById)
   .put(meetingsController.updateFeed)
   .delete(meetingsController.remove);
 

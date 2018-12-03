@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Message from './Message';
 import './buttons.css';
 
 class Buttons extends Component {

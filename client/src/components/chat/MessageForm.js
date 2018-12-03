@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './MessageForm.css'
+import { Grid, Row} from 'react-bootstrap'
 
 class MessageForm extends Component {
   static propTypes = {
@@ -14,6 +15,7 @@ class MessageForm extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault()
     this.props.onMessageSend(this.input.value)
+    console.log(this.input.value)
     this.input.value = ""
   }
 
@@ -37,23 +39,28 @@ class MessageForm extends Component {
   render() {
     return (
       <form className="MessageForm" onSubmit={this.handleFormSubmit}>
+        <Row>
+          <Grid>
         <div className="input-container">
           <input
             type="text"
             ref={(node) => (this.input = node)}
             placeholder="Enter your message..."
+            className="inp"
           />
-        </div>
-        <div className="button-container">
-          <button type="submit">
+        
+          <button type="submit" className="btn">
             Send
           </button>
-        </div>
-        <div>
-          <button className="btn " onClick={this.offtrack} >Meeting Off Track</button>
-          <button className="btn" onClick={this.greatPoint} >Great Point</button>
-          <button className="btn" onClick={this.raiseHand} >Raise your Hand</button>  
-        </div>
+     
+       
+          
+          <button className="btn OT" onClick={this.offtrack} >Meeting Off Track</button>
+          <button className="btn GP" onClick={this.greatPoint} >Great Point</button>
+          <button className="btn RH" onClick={this.raiseHand} >Raise your Hand</button>  
+          </div>
+          </Grid>
+          </Row>
       </form>
       
     )
