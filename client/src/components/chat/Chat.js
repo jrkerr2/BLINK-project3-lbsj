@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import MessageForm from './MessageForm';
 import MessageList from "./MessageList";
-import Buttons from './buttons';
 import axios from 'axios';
 import './Chat.css';
-import {Table} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 
 
 class Chat extends Component {
@@ -67,7 +66,6 @@ class Chat extends Component {
         
         
        
-        <Buttons />
         <MessageList messages={ this.state.messages } />
         <MessageForm onMessageSend={ this.handleNewMessage } />
       </div>

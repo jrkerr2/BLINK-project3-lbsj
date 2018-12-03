@@ -6,7 +6,7 @@ const db = require("../models");
 // please check your locally-necessary connection string
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://luckyf:spaniel19860927@ds045157.mlab.com:45157/blink"
+  "mongodb://root:root@127.0.0.1/blink?authSource=admin"
 );
 
 const blinkSeed = [
