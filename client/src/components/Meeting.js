@@ -22,7 +22,7 @@ export default class Meeting extends Component {
                 this.setState({ meeting: res.data });
                 //console.log(res.data)
             })
-        }, 100000);      
+        }, 1000);      
         
         console.log(this.state.meeting)        
     }

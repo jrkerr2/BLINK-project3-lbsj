@@ -11,7 +11,7 @@ module.exports = {
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-      
+
   },
 
   findById: function(req, res) {
@@ -47,6 +47,15 @@ module.exports = {
       .findOneAndUpdate({ _id: req.params.id }, {$push: {feed: req.body.feed}}, {new: true})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+
+  findFeedById: function(req, res) {
+    console.log("You've reached findFeedById");
+    db.Meeting
+      .findById(req.params.id, "feed")
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+      
   },
 
   update: function(req, res) {

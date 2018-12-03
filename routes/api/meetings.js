@@ -13,16 +13,9 @@ router.route("/:id")
   .put(meetingsController.update)
   .delete(meetingsController.remove);
 
-// Equivalent to "/api/meetings/feed/"
-router.route("/feed")
-.get(meetingsController.findAll)
-.put(meetingsController.updateFeed)
-.delete(meetingsController.remove);
-    
-
 // Equivalent to "/api/meetings/feed/:id"
 router.route("/feed/:id")
-  .get(meetingsController.findById)
+  .get(meetingsController.findFeedById)
   .put(meetingsController.updateFeed)
   .delete(meetingsController.remove);
 
